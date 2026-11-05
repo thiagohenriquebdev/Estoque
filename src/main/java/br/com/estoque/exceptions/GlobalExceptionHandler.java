@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler  {
 
-    public GlobalExceptionHandler(Long id) {
+    public GlobalExceptionHandler() {
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)
@@ -23,8 +23,12 @@ public class GlobalExceptionHandler  {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> tratarErroGeral(Exception ex) {
 
+        ex.printStackTrace();
+
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body("Erro Interno Do Serve : ");
+                .body("Erro Interno Do Serve : " + ex.getMessage());
+
+
     }
 }

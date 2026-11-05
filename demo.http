@@ -1,0 +1,15 @@
+GET  http://localhost:8081/produto/3
+Content-Type: application/json
+
+{
+  "nome": "carro",
+  "price": 750.0
+}
+
+
+
+
+
+
+
+

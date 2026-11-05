@@ -1,14 +1,11 @@
 package br.com.estoque.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.util.ArrayList;
 import java.util.List;
+import jakarta.persistence.OneToMany;
 
 @Setter
 @Getter
@@ -21,6 +18,7 @@ public class Estoque {
 
     private String nome;
 
+    @OneToMany
     private List<Produto> produto = new ArrayList<>();
 
     public Estoque () {

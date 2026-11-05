@@ -1,7 +1,7 @@
-package br.com.estoque.aplication;
-
+package br.com.estoque;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 
 @SpringBootApplication
 public class EstoqueApplication {

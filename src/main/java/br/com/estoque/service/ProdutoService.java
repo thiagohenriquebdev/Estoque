@@ -12,8 +12,12 @@ import java.util.List;
 @Service
 public class ProdutoService {
 
-    @Autowired
-    private ProdutoRepository repository;
+
+    private final ProdutoRepository repository;
+
+    public ProdutoService(ProdutoRepository repository) {
+        this.repository = repository;
+    }
 
 
     public List<Produto> findAll() {
@@ -24,7 +28,7 @@ public class ProdutoService {
          return repository.findById(id).orElseThrow(() -> new ResourceNotFoundException(id));
     }
 
-    public Produto Insert(Produto insert) {
+    public Produto insert(Produto insert) {
        return repository.save(insert);
     }
 
